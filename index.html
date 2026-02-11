@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sua Hamburgueria</title>
+
+  <!-- CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid #ff9900;
+    }
+
+    header h1 {
+      color: #ff9900;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    .banner {
+      background: url('https://images.unsplash.com/photo-1550547660-d9450f859349') center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner h2 {
+      background: rgba(0,0,0,0.7);
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .burger {
+      background: #1b1b1b;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      border: 1px solid #333;
+    }
+
+    .burger:hover {
+      transform: scale(1.05);
+      border-color: #ff9900;
+    }
+
+    .burger img {
+      width: 100%;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .burger h3 {
+      margin: 10px 0;
+      color: #ff9900;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #ff9900;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ffaa22;
+    }
+
+    .info {
+      margin-top: 40px;
+      background: #000;
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #333;
+    }
+
+    .social {
+      margin-top: 15px;
+    }
+
+    .social a {
+      margin-right: 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: #ff9900;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      margin-top: 40px;
+      border-top: 3px solid #ff9900;
+    }
+
+    /* WhatsApp flutuante */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      padding: 15px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .whatsapp:hover {
+      background: #1ebe5d;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>🍔 Sua Hamburgueria</h1>
+    <nav>
+      <a href="#menu">Cardápio</a>
+      <a href="#info">Informações</a>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <h2>Os Melhores Hambúrgueres da Cidade 🔥</h2>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section class="container" id="menu">
+    <h2>Cardápio</h2>
+    <br />
+
+    <div class="menu-grid">
+
+      <!-- 8 HAMBÚRGUERES -->
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+        <h3>X‑Burguer</h3>
+        <p>Pão, carne, queijo e molho especial</p>
+        <p class="price">R$ 18,00</p>
+        <button onclick="pedir('X-Burguer')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b">
+        <h3>X‑Salada</h3>
+        <p>Carne, queijo, alface e tomate</p>
+        <p class="price">R$ 20,00</p>
+        <button onclick="pedir('X-Salada')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e2d53f1c">
+        <h3>X‑Bacon</h3>
+        <p>Carne, queijo e bacon crocante</p>
+        <p class="price">R$ 22,00</p>
+        <button onclick="pedir('X-Bacon')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1550547660-3c0b9d95d5b0">
+        <h3>Duplo Cheddar</h3>
+        <p>2 carnes e muito cheddar</p>
+        <p class="price">R$ 25,00</p>
+        <button onclick="pedir('Duplo Cheddar')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90">
+        <h3>Monster Burguer</h3>
+        <p>3 carnes + bacon + queijo</p>
+        <p class="price">R$ 30,00</p>
+        <button onclick="pedir('Monster Burguer')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1596662951482-0c4ba74a6df6">
+        <h3>Frango Crispy</h3>
+        <p>Frango empanado crocante</p>
+        <p class="price">R$ 21,00</p>
+        <button onclick="pedir('Frango Crispy')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+        <h3>Veggie Burguer</h3>
+        <p>Hambúrguer vegetariano</p>
+        <p class="price">R$ 19,00</p>
+        <button onclick="pedir('Veggie Burguer')">Pedir</button>
+      </div>
+
+      <div class="burger">
+        <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f">
+        <h3>Supremo da Casa</h3>
+        <p>Especial com molho secreto</p>
+        <p class="price">R$ 27,00</p>
+        <button onclick="pedir('Supremo da Casa')">Pedir</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFORMAÇÕES -->
+  <section class="container info" id="info">
+    <h2>Informações</h2>
+
+    <p><strong>📍 Localização:</strong> 40 horas - ananindeua/pa</p>
+    <p><strong>💳 Pagamentos aceitos:</strong> Pix, Cartão, Dinheiro</p>
+
+    <div class="social">
+      <p><strong>Redes sociais:</strong></p>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Hamburgueria - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- BOTÃO WHATSAPP -->
+  <a class="whatsapp" 
+     href="https://wa.me/5599999999999?text=Olá%20quero%20fazer%20um%20pedido"
+     target="_blank">
+     WhatsApp
+  </a>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function pedir(nome) {
+      alert('Você pediu: ' + nome + '\nPedido enviado para o WhatsApp!');
+    }
+  </script>
+
+</body>
+</html>
